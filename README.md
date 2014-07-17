@@ -22,6 +22,9 @@ This theme is a work in progress. The following is a list of features that are b
 
 - [ ] Comments
 - [ ] Post Formats
+- [ ] Theme Customizer integration
+- [ ] WordPress 4.0 tweaks
+- [ ] Add Grunt tasks
 
 ## Quick Start
 
