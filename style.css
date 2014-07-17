@@ -1,0 +1,262 @@
+/*
+Theme Name: Pure
+Theme URI: http://www.lelandriordan.com/pure
+Author: Leland Riordan
+Author URI: http://www.lelandriordan.com
+Description: A WordPress starter theme designed for speed
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: pure
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+h3 {
+	font-weight: 100;
+}
+
+img, .wp-caption {
+	height: auto;
+	max-width: 100%;
+}
+/**
+ * Layout
+ */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+    padding: 0;
+}
+
+/**
+ * Header
+ */
+.site-header {
+	text-align: center;
+	top: auto;
+	margin: 3em auto;
+}
+
+/**
+ * Sidebar
+ * TODO: Rename this to avoid conflicts with WordPress generated sidebar classes
+ */
+
+.sidebar {
+	background: rgb(61, 79, 93);
+	color: #fff;
+}
+
+/* These are ".brand-title" and ".brand-tagline" in the Pure CSS example. */
+.site-title,
+.site-description {
+	margin: 0;
+}
+
+.site-title {
+	text-transform: uppercase;
+}
+
+.site-title a {
+	color: #fff;
+}
+.site-title a:hover,
+.site-title a:focus {
+	color: rgb(61, 146, 201);
+	text-decoration: none;
+}
+.site-description {
+	font-weight: 300;
+	color: rgb(176,202,219);
+}
+
+/**
+ *  Nav
+ *  wp_nav_menu makes it hard to add classes to list items without adding a Walker.
+ *  Thus, the .nav-item class is not used like in the Pure Documentation.
+ *  Instead, this directly targets the nav-list li's to achieve the same results.
+ */
+.nav-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav-list li {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.nav-list li a {
+	/* .pure-button hack, see README Hacks section */
+	font-family: inherit;
+	font-size: 100%;
+	*font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+	*overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+	padding: 0.5em 1em;
+	color: #444; /* rgba not supported (IE 8) */
+	color: rgba(0, 0, 0, 0.80); /* rgba supported */
+	*color: #444; /* IE 6 & 7 */
+	border: 1px solid #999;  /*IE 6/7/8*/
+	border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+	background-color: #E6E6E6;
+	text-decoration: none;
+	border-radius: 2px;
+	/* End pure-button hack */
+
+	background: transparent;
+	border: 2px solid rgb(176, 202, 219);
+	color: #fff;
+	margin-top: 1em;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	font-size: 85%;
+}
+.nav-list li a:hover,
+.nav-list li a:focus {
+	/**
+	 * .pure-button class hack
+	 * Default Pure CSS button styles are added directly because there is no easy way in WordPress to add a class to menu links.
+	 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+	background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+	background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
+	background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+	background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+	/* End .pure-button hack */
+
+	border: 2px solid rgb(61, 146, 201);
+	text-decoration: none;
+}
+
+/**
+ * Content
+ */
+.site-content {
+	padding: 2em 1em 0;
+}
+
+/**
+ * Posts
+ */
+.post {
+	padding-bottom: 2em;
+}
+
+.entry-title a {
+	/* font-size: 2em; */
+	color: #222;
+	margin-bottom: 0.2em;
+}
+.entry-title a:hover,
+.entry-title a:focus {
+	color: rgb(61, 146, 201);
+	text-decoration: none;
+}
+.entry-meta {
+	color: #999;
+	font-size: 90%;
+	margin: 0;
+}
+.entry-summary,
+.entry-content {
+	font-family: Georgia, "Cambria", serif;
+	color: #444;
+	line-height: 1.8em;
+}
+
+/**
+ * Pagination
+ */
+.pagination {
+	display: block;
+	padding: 1em 0;
+	margin-bottom: 2em;
+}
+.pagination a {
+	text-decoration: none;
+}
+.pagination .nav-previous {
+	float: left;
+}
+.pagination .nav-next {
+	float: right;
+}
+
+/**
+ * Footer
+ */
+.site-footer {
+	text-align: center;
+	padding: 1em 0;
+	font-size: 80%;
+	color: #aaa;
+}
+.site-footer a {
+	color: #ccc;
+}
+.site-footer .pure-menu a:hover,
+.site-footer .pure-menu a:focus {
+	background: none;
+}
+.site-info {
+	padding: 1em 0;
+}
+
+/**
+ * WordPress Admin Bar Overrides
+ */
+.admin-bar {
+
+}
+
+/**
+ * Media Queries
+ */
+@media (min-width: 48em) {
+	.site-content {
+		padding: 2em 3em 0;
+		margin-left: 25%;
+	}
+	.site-header {
+		margin: 80% 2em 0;
+		text-align: right;
+	}
+	.sidebar {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+	}
+	/**
+	 * WordPress Admin Bar Overrides for larger screens
+	 */
+	.admin-bar #masthead {
+		top: 32px;
+	}
+	.admin-bar #page {
+		padding-top: 32px;
+	}
+}

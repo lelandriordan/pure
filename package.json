@@ -1,0 +1,18 @@
+{
+  "name": "pure",
+  "version": "0.0.1",
+  "description": "The Pure CSS WordPress Theme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lelandriordan/pure.git"
+  },
+  "author": "Leland Riordan",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/lelandriordan/pure/issues"
+  },
+  "homepage": "https://github.com/lelandriordan/pure",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
