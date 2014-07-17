@@ -12,7 +12,7 @@ Pure CSS WordPress Theme
 
 ## Introduction
 
-Pure is a WordPress theme for developers built with Yahoo's excellent [Pure CSS](http://purecss.io/). It is designed to be as simpleas possible while following best practices set by Automattic's _S.
+Pure is a WordPress theme for developers built with Yahoo's excellent [Pure CSS](http://purecss.io/). It is designed to be as simple as possible while following WordPress best practices set by [Automattic's _S](http://underscores.me/).
 
 Currently, Pure is a work in progress and should not be used without heavy modifications.
 
