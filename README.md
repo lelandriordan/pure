@@ -26,6 +26,7 @@ This theme is a work in progress. The following is a list of features that are b
 - [ ] WordPress 4.0 tweaks
 - [ ] Clean up CSS
 - [ ] Add Grunt tasks for optimization
+- [ ] Create Github pages customization documentation
 
 ## Quick Start
 
