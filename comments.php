@@ -29,4 +29,5 @@ if ( post_password_required() ) {
 		</ol>
 	<?php endif; // have_comments ?>
 
+	<?php comment_form(); ?>
 </div>
