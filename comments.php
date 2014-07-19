@@ -19,7 +19,14 @@ if ( post_password_required() ) {
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h1>
-
+		
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style' => 'ol'
+				) );
+			?>
+		</ol>
 	<?php endif; // have_comments ?>
 
 </div>
