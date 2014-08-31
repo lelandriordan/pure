@@ -57,6 +57,21 @@ function pure_navigation_menus() {
 add_action( 'init', 'pure_navigation_menus' );
 
 /**
+ * Register Siderbars and default widgets
+ */
+function pure_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'pure' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+}
+add_action( 'widgets_init', 'pure_widgets_init');
+
+/**
  * Enqueue Stylesheets and JavaScripts
  */
 function pure_scripts() {
@@ -73,21 +88,6 @@ function pure_scripts() {
 	 */
 }
 add_action( 'wp_enqueue_scripts', 'pure_scripts' );
-
-/**
- * Register Siderbars and default widgets
- */
-function pure_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'pure' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'pure_widgets_init');
 
 /**
  * Custom template tags
