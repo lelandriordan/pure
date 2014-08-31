@@ -88,103 +88,16 @@ function pure_widgets_init() {
 add_action( 'widgets_init', 'pure_widgets_init');
 
 /**
- * Schema.org html tags
- * Changes the <html> 
- * TODO move this to components/template tags
+ * Custom template tags
  */
-function pure_html_tag_schema() {
-
-	/**
-	 * Base URL
-	 */
-	$schema = 'http://schema.org/';
-
-	/**
-	 * Single Posts
-	 */
-	if ( is_single() ) {
-		$type = 'Article';
-	}
-
-	/**
-	 * Author Pages
-	 */
-	elseif ( is_author() ) {
-		$type = 'ProfilePage';
-	}
-
-	/**
-	 * Search Results
-	 */
-	elseif ( is_search() ) {
-		$type = 'SearchResultsPage';
-	}
-
-	/**
-	 * Add site specific pages and custom post types here
-	 */
-	
-	/**
-	 * All other pages
-	 */
-	else {
-		$type = 'WebPage';
-	}
-
-	echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
-}
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Entry Meta
+ * Custom filters
  */
-function pure_meta() {
-	
-}
-
-if ( ! function_exists( 'pure_pagination' )) :
-	/**
-	 * Pagination
-	 * Displays Next/Previous page links
-	 */
-	function pure_pagination() {
-		// Show nothing if there is only one page
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-			return;
-		}
-		?>
-		<nav class="pagination">
-			<?php if ( get_next_posts_link() ) : ?>
-				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'pure' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'pure' ) ); ?></div>
-			<?php endif; ?>
-		</nav><!-- .pagination -->
-		<?php
-	}
-endif;
+require get_template_directory() . '/inc/filters.php';
 
 /**
- * Pagination link class filter
- * Changes the class of the pagination links
+ * Schema.org markup handlers
  */
-add_filter('next_posts_link_attributes', 'posts_link_attributes');
-add_filter('previous_posts_link_attributes', 'posts_link_attributes');
-
-function posts_link_attributes() {
-	return 'class="pure-button"';
-}
-
-/**
- * Table class filter
- * Adds the .pure-table class to all tables
- * TODO: Double check that this covers all possible table locations
- */
-add_filter( 'the_content', 'pure_custom_table_class' );
-add_filter( 'comment_text', 'pure_custom_table_class');
-add_filter( 'widget_content', 'pure_custom_table_class');
-
-function pure_custom_table_class( $content ) {
-	return str_replace('<table>', '<table class="pure-table">', $content);
-}
+require get_template_directory() . '/inc/schema.php';
