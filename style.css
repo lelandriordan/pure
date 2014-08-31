@@ -37,6 +37,12 @@ img, .wp-caption {
 	height: auto;
 	max-width: 100%;
 }
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
 /**
  * Layout
  */
