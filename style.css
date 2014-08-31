@@ -233,6 +233,22 @@ object {
 }
 
 /**
+ * Comments
+ * Comment styling is intentionally minimal.
+ * I recommend using Disqus, LiveFyre, Intense Debate or another third party comment solution.
+ */
+ol.comment-list,
+li.comment > ol.children {
+	list-style-type: none;
+}
+li.comment {
+	margin-bottom: 40px;
+}
+.comment-meta a {
+	color: #999;
+}
+
+/**
  * WordPress Admin Bar Overrides
  */
 .admin-bar {
