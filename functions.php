@@ -46,13 +46,15 @@ endif; // End pure_setup
 add_action( 'after_theme_setup', 'pure_setup' );
 
 /**
-	* Add menus
-	* TODO: MOVE BACK INTO SETUP FUNCTION LIKE _S?
-	*/
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'pure' ),
-	'footer' => __( 'Footer Menu', 'pure' ),
-) );
+ * Register Nav Menus
+ */
+function pure_navigation_menus() {
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'pure' ),
+		'footer' => __( 'Footer Menu', 'pure' ),
+	) );
+}
+add_action( 'init', 'pure_navigation_menus' );
 
 /**
  * Enqueue Stylesheets and JavaScripts
