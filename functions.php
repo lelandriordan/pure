@@ -175,3 +175,16 @@ add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 function posts_link_attributes() {
 	return 'class="pure-button"';
 }
+
+/**
+ * Table class filter
+ * Adds the .pure-table class to all tables
+ * TODO: Double check that this covers all possible table locations
+ */
+add_filter( 'the_content', 'pure_custom_table_class' );
+add_filter( 'comment_text', 'pure_custom_table_class');
+add_filter( 'widget_content', 'pure_custom_table_class');
+
+function pure_custom_table_class( $content ) {
+	return str_replace('<table>', '<table class="pure-table">', $content);
+}
