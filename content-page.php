@@ -5,6 +5,7 @@
 ?>
 <article>
 	<header>
+		<?php pure_post_thumbnail(); ?>
 		<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
 		<?php pure_meta() ?>
 	</header>

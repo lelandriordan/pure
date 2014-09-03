@@ -37,3 +37,14 @@ if ( ! function_exists( 'pure_meta' ) ) :
 		<?php
 	}
 endif;
+
+if ( ! function_exists( 'pure_post_thumbnail' ) ) :
+	/**
+	 * Displays the post thumbnail
+	 */
+	function pure_post_thumbnail() {
+		if ( has_post_thumbnail() ) {
+		  the_post_thumbnail('full', array('itemprop' => 'image'));
+		}
+	}
+endif;

@@ -5,11 +5,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="Article">
 	<header>
-		<?php 
-		if ( has_post_thumbnail() ) {
-		  the_post_thumbnail('full', array('itemprop' => 'image'));
-		} 
-		?>
+		<?php pure_post_thumbnail(); ?>
 		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="name"><a href="%s" rel="bookmark" itemprop="url">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<?php pure_meta() ?>
 	</header>
