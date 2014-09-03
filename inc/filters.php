@@ -27,3 +27,15 @@ add_filter( 'widget_content', 'pure_custom_table_class');
 function pure_custom_table_class( $content ) {
 	return str_replace('<table>', '<table class="pure-table">', $content);
 }
+
+/**
+ * Add title to home page
+ */
+add_filter( 'wp_title', 'pure_wp_title_for_home' );
+function pure_wp_title_for_home( $title )
+{
+	if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+		return get_bloginfo('name') . ' | ' . get_bloginfo( 'description' );
+	}
+	return $title;
+}
