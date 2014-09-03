@@ -31,7 +31,9 @@ if ( ! function_exists( 'pure_meta' ) ) :
 	/**
 	 * Displays post meta
 	 */
-	function pure_meta() {
-		
+	function pure_meta() { ?>
+		<time class="published entry-date" datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
+		<p class="byline author vcard"><?php echo __('By', 'pure'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author"><?php echo get_the_author(); ?></a></p>
+		<?php
 	}
 endif;
