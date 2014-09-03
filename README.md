@@ -1,7 +1,7 @@
 Pure
 ======
 
-A simple WordPress theme built with Yahoo's Pure CSS.
+A simple WordPress theme built with Yahoo's [Pure CSS](http://purecss.io).
 
 ## Table of Contents
 
