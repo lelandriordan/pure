@@ -5,7 +5,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
 		<?php pure_meta() ?>
 	</header>
 	<div class="entry-content" itemprop="mainContentOfPage">
