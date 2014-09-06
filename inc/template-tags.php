@@ -39,12 +39,42 @@ if ( ! function_exists( 'pure_meta' ) ) :
 endif;
 
 if ( ! function_exists( 'pure_post_thumbnail' ) ) :
+/**
+ * Displays the post thumbnail
+ */
+function pure_post_thumbnail() {
 	/**
-	 * Displays the post thumbnail
+	 * Display nothing for password protected posts, attachments or no featured image
 	 */
-	function pure_post_thumbnail() {
-		if ( has_post_thumbnail() ) {
-		  the_post_thumbnail('full', array('itemprop' => 'image'));
-		}
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
 	}
-endif;
+
+	if ( is_singular() && has_post_thumbnail() ) { 
+	/**
+	* If the current page/post is singular, and it has a post thumbnail,
+	* display the image, but don't wrap it in an unnecessary permalink.
+	*/
+	?>
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail('full', array('itemprop' => 'image')); ?>
+	</div>
+
+	<?php } elseif ( has_post_thumbnail() ) { 
+	/**
+	 * Elseif post/page isn't singular, but the post has a post thumbnail,
+	 * wrap the image in a permalink.
+	 */
+	?>
+	<a class="post-thumbnail" href="<?php esc_url( the_permalink() ); ?>">
+		<?php the_post_thumbnail('full', array('itemprop' => 'image')); ?>
+	</a>
+	
+	<?php } else {
+	/**
+	 * Otherwise don't display any markup for posts without post thumbails.
+	 */
+		return;
+	}
+}
+endif; // End pure_post_thumbnail
