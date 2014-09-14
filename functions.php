@@ -18,6 +18,14 @@ function pure_setup() {
 	load_theme_textdomain( 'pure', get_template_directory() . '/languages' );
 
 	/**
+	 * Register navigation menus
+	 */
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'pure' ),
+		'footer' => __( 'Footer Menu', 'pure' ),
+	) );
+
+	/**
 	 * Add default posts and comments RSS feed links to head.
 	 */
 	add_theme_support( 'automatic-feed-links' );
@@ -43,18 +51,7 @@ function pure_setup() {
 	) );
 }
 endif; // End pure_setup
-add_action( 'after_theme_setup', 'pure_setup' );
-
-/**
- * Register Nav Menus
- */
-function pure_navigation_menus() {
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'pure' ),
-		'footer' => __( 'Footer Menu', 'pure' ),
-	) );
-}
-add_action( 'init', 'pure_navigation_menus' );
+add_action( 'after_setup_theme', 'pure_setup' );
 
 /**
  * Register Siderbars and default widgets
