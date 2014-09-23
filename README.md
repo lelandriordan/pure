@@ -27,5 +27,3 @@ Pure is a WordPress theme for developers built with Yahoo's excellent [Pure CSS]
 The Pure theme is proudly licensed under the [GPLv2](LICENSE).
 
 Pure CSS is licensed under the Yahoo BSD License.
-
-Copyright &copy; 2014 Leland Riordan.
