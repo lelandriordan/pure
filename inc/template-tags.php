@@ -27,16 +27,39 @@ if ( ! function_exists( 'pure_pagination' ) ) :
 	}
 endif;
 
+
 if ( ! function_exists( 'pure_meta' ) ) :
-	/**
-	 * Displays post meta
-	 */
-	function pure_meta() { ?>
-		<time class="published entry-date" datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-		<p class="byline author vcard"><?php echo __('By', 'pure'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn" itemprop="author"><?php echo get_the_author(); ?></a></p>
-		<?php
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function pure_meta() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		_x( 'Posted on %s', 'post date', 'pure' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	$byline = sprintf(
+		_x( 'by %s', 'post author', 'pure' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+
+	echo '<span class="entry-meta posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+
+}
 endif;
+
 
 if ( ! function_exists( 'pure_post_thumbnail' ) ) :
 /**
