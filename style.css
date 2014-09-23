@@ -186,6 +186,8 @@ code {
 	padding-bottom: 2em;
 }
 .entry-title {
+	font-size: 3em;
+	margin-top: 0.3em;
 	margin-bottom: 0.2em;
 }
 .entry-title a {
@@ -275,13 +277,6 @@ li.comment {
 }
 
 /**
- * WordPress Admin Bar Overrides
- */
-.admin-bar {
-
-}
-
-/**
  * Alignment
  */
 
@@ -319,10 +314,13 @@ img.aligncenter {
 /**
  * Media Queries
  */
-@media (min-width: 48em) {
+@media (min-width: 60em) {
 	.site-content {
 		padding: 2em 3em 0;
 		margin-left: 25%;
+	}
+	.site-main {
+		max-width: 60em;
 	}
 	.site-header {
 		margin: 80% 2em 0;
@@ -344,3 +342,12 @@ img.aligncenter {
 		padding-top: 32px;
 	}
 }
+
+@media (min-width: 100em) {
+	.site-content {
+		margin-left: 33%;
+	}
+	.sidebar {
+		width: 33%;
+	}
+} 
