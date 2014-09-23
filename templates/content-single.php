@@ -13,7 +13,7 @@
 		<?php the_content(); ?>
 	</div>
 	<footer>
-		
+		<?php pure_post_nav(); ?>
 	</footer>
 	<?php
 		// Load the comment template if they are open or if there is at least one comment

@@ -57,6 +57,12 @@ pre {
 code {
 	padding: 0 0.2em;
 }
+
+.screen-reader-text {
+	position: absolute;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
 /**
  * Layout
  */
@@ -223,20 +229,24 @@ ul.post-categories li {
 }
 
 /**
- * Pagination
+ * Page/Post Nav
  */
-.pagination {
+.page-nav,
+.post-nav {
 	display: block;
 	padding: 1em 0;
 	margin-bottom: 2em;
 }
-.pagination a {
+.page-nav a,
+.post-nav a {
 	text-decoration: none;
 }
-.pagination .nav-previous {
+.page-nav .nav-previous,
+.post-nav .nav-previous {
 	float: left;
 }
-.pagination .nav-next {
+.page-nav .nav-next,
+.post-nav .nav-next {
 	float: right;
 }
 

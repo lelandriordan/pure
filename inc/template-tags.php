@@ -3,18 +3,17 @@
  * Custom template tags
  */
 
-if ( ! function_exists( 'pure_pagination' ) ) :
+if ( ! function_exists( 'pure_page_nav' ) ) :
 	/**
-	 * Pagination
-	 * Displays Next/Previous page links
+	 * Display Next/Previous page links
 	 */
-	function pure_pagination() {
+	function pure_page_nav() {
 		// Show nothing if there is only one page
 		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 			return;
 		}
 		?>
-		<nav class="pagination">
+		<nav class="page-nav">
 			<?php if ( get_next_posts_link() ) : ?>
 				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'pure' ) ); ?></div>
 			<?php endif; ?>
@@ -25,6 +24,33 @@ if ( ! function_exists( 'pure_pagination' ) ) :
 		</nav><!-- .pagination -->
 		<?php
 	}
+endif;
+
+
+if ( ! function_exists('pure_post_nav') ) :
+/**
+ * Display next/previous post links on single posts
+ */
+function pure_post_nav() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'pure' ); ?></h1>
+		<div class="post-nav">
+			<?php
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'pure' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'pure' ) );
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
 endif;
 
 

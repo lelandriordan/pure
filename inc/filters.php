@@ -5,14 +5,26 @@
  */
 
 /**
- * Pagination link class filter
- * Changes the class of the pagination links
+ * Page nav link class filter
+ * Adds class to page nav links
  */
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
 function posts_link_attributes() {
 	return 'class="pure-button"';
+}
+
+/**
+ * Post nav link class filter
+ * Adds class to post nav links
+ */
+add_filter('next_post_link', 'post_link_attributes');
+add_filter('previous_post_link', 'post_link_attributes');
+
+function post_link_attributes($output) {
+    $injection = 'class="pure-button"';
+    return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 
 /**
