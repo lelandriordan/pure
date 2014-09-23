@@ -14,6 +14,9 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 */
 
+/**
+ * Globals
+ */
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -42,6 +45,17 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+pre,
+code {
+	background-color: #eee;
+}
+pre {
+	padding: 1em;
+}
+code {
+	padding: 0 0.2em;
 }
 /**
  * Layout
@@ -171,11 +185,12 @@ object {
 .post {
 	padding-bottom: 2em;
 }
-
+.entry-title {
+	margin-bottom: 0.2em;
+}
 .entry-title a {
 	/* font-size: 2em; */
 	color: #222;
-	margin-bottom: 0.2em;
 }
 .entry-title a:hover,
 .entry-title a:focus {
@@ -264,6 +279,41 @@ li.comment {
  */
 .admin-bar {
 
+}
+
+/**
+ * Alignment
+ */
+
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+img.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+img.aligncenter {
+	display: block;
+	margin: 1em auto;
+}
+
+.wp-caption-text {
+	color: #999;
+	font-size: 90%;
+	margin: 0;
 }
 
 /**
