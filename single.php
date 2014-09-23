@@ -7,7 +7,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php get_template_part( 'templates/content', 'single' ); ?>
 
 			<?php
 				// Load the comment template if they are open or if there is at least one comment
