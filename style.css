@@ -301,8 +301,54 @@ img.alignleft {
 	margin: 0 1em 1em 0;
 }
 img.aligncenter {
-	display: block;
 	margin: 1em auto;
+}
+
+/**
+ * Galleries and Images
+ */
+.gallery {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	margin-bottom: 1em;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+.gallery-item img {
+	width: 100%;
+}
+.gallery-caption {
+	display: block;
+	padding: 0 1em 1em 1em;
+	margin-bottom: 1em;
 }
 
 .wp-caption-text {
