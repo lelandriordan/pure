@@ -194,6 +194,17 @@ object {
 	line-height: 1.8em;
 }
 
+ul.post-categories {
+	padding-left: 0;
+	list-style-type: none;
+	display: inline;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+ul.post-categories li {
+	display: inline;
+}
+
 /**
  * Pagination
  */

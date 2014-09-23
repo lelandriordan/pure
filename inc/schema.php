@@ -1,6 +1,6 @@
 <?php
 /**
- * Adds Schema.org markup
+ * Schema.org markup control functions
  */
 
 if ( ! function_exists('pure_html_tag_schema') ) :
@@ -50,3 +50,16 @@ function pure_html_tag_schema() {
 	echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 }
 endif;
+
+/*if ( ! function_exists( 'pure_the_title_schema' ) ) :
+	/**
+	 * Add itemprop="name" to the post title on all pages
+	 * @return [type] [description]
+	 *
+	function pure_name_itemprop() {
+		if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+			return;
+		}
+		return __('itemprop="name"');
+	}
+endif; */
