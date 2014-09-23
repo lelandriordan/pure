@@ -9,13 +9,6 @@ get_header(); ?>
 
 			<?php get_template_part( 'templates/content', 'single' ); ?>
 
-			<?php
-				// Load the comment template if they are open or if there is at least one comment
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
 		<?php endwhile; ?>
 
 </main>

@@ -12,7 +12,11 @@
 	<div class="entry-content" itemprop="mainContentOfPage">
 		<?php the_content(); ?>
 	</div>
-	<footer>
-		
-	</footer>
+	<footer></footer>
+	<?php
+		// Load the comment template if they are open or if there is at least one comment
+		if ( comments_open() || '0' != get_comments_number() ) :
+			comments_template();
+		endif;
+	?>
 </article>
