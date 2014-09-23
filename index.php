@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php pure_pagination() ?>	
+		<?php pure_pagination() ?>
 
 	<?php else : ?>
 
