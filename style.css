@@ -262,6 +262,10 @@ ul.post-categories li {
 .site-footer a {
 	color: #ccc;
 }
+.site-footer .pure-menu-list li {
+	display: inline-block;
+	padding:.5em 1em;
+}
 .site-footer .pure-menu a:hover,
 .site-footer .pure-menu a:focus {
 	background: none;
@@ -406,4 +410,4 @@ img.aligncenter {
 	.sidebar {
 		width: 33%;
 	}
-} 
+}

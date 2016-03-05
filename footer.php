@@ -10,11 +10,12 @@
 		 * The menu_class argument breaks if there is no menu activated in the WordPress Admin
 		 */
 		if ( has_nav_menu( 'footer' ) ) :
-			wp_nav_menu( array( 'theme_location' => 'footer', 'container_class' => 'pure-menu pure-menu-horizontal pure-menu-open' ) );
+			wp_nav_menu( array( 'theme_location' => 'footer', 'container_class' => 'pure-menu pure-menu-horizontal', 'menu_class' => 'pure-menu-list' ) );
 		endif;
 	?>
+
 	<div class="site-info">
-		<?php printf( __( 'The %1$s by %2$s.', 'pure' ), 'Pure Theme', '<a href="http://www.lelandriordan.com" rel="designer">Leland Riordan</a>' ); ?>
+		<?php printf( __( '%1$s by %2$s.', 'pure' ), '<a href="https://github.com/lelandriordan/pure" rel="designer">Pure Theme</a>', '<a href="http://www.lelandriordan.com" rel="designer">Leland Riordan</a>' ); ?>
 	</div>
 </footer>
 </div><!-- End #content -->
