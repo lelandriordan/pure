@@ -1,19 +1,7 @@
 Pure
 ======
 
-A simple WordPress theme built with Yahoo's [Pure CSS](http://purecss.io).
-
-Currently, Pure is a work in progress and should only be used by developers.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Quick Start](#quick-start)
-- [Copyright and license](#copyright-and-license)
-
-## Introduction
-
-Pure is a WordPress theme for developers built with Yahoo's excellent [Pure CSS](http://purecss.io/). It is designed to be as simple as possible while following WordPress best practices set by [Automattic's _S](http://underscores.me/).
+Pure is a WordPress theme for developers built with Yahoo's [Pure CSS](http://purecss.io/). It is designed to be as simple as possible while following WordPress best practices set by [Automattic's _S](http://underscores.me/).
 
 ## Quick Start
 

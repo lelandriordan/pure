@@ -39,7 +39,7 @@ function pure_html_tag_schema() {
 	/**
 	 * Add site specific pages and custom post types here
 	 */
-	
+
 	/**
 	 * All other pages
 	 */
@@ -50,16 +50,3 @@ function pure_html_tag_schema() {
 	echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 }
 endif;
-
-/*if ( ! function_exists( 'pure_the_title_schema' ) ) :
-	/**
-	 * Add itemprop="name" to the post title on all pages
-	 * @return [type] [description]
-	 *
-	function pure_name_itemprop() {
-		if( empty( $title ) && ( is_home() || is_front_page() ) ) {
-			return;
-		}
-		return __('itemprop="name"');
-	}
-endif; */

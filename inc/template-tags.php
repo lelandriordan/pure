@@ -59,17 +59,16 @@ if ( ! function_exists( 'pure_meta' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function pure_meta() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+
 
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'pure' ),
@@ -99,7 +98,7 @@ function pure_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() && has_post_thumbnail() ) { 
+	if ( is_singular() && has_post_thumbnail() ) {
 	/**
 	* If the current page/post is singular, and it has a post thumbnail,
 	* display the image, but don't wrap it in an unnecessary permalink.
@@ -109,7 +108,7 @@ function pure_post_thumbnail() {
 		<?php the_post_thumbnail('full', array('itemprop' => 'image')); ?>
 	</div>
 
-	<?php } elseif ( has_post_thumbnail() ) { 
+	<?php } elseif ( has_post_thumbnail() ) {
 	/**
 	 * Elseif post/page isn't singular, but the post has a post thumbnail,
 	 * wrap the image in a permalink.
@@ -118,7 +117,7 @@ function pure_post_thumbnail() {
 	<a class="post-thumbnail" href="<?php esc_url( the_permalink() ); ?>">
 		<?php the_post_thumbnail('full', array('itemprop' => 'image')); ?>
 	</a>
-	
+
 	<?php } else {
 	/**
 	 * Otherwise don't display any markup for posts without post thumbails.

@@ -262,6 +262,10 @@ ul.post-categories li {
 .site-footer a {
 	color: #ccc;
 }
+.site-footer .pure-menu-list li {
+	display: inline-block;
+	padding:.5em 1em;
+}
 .site-footer .pure-menu a:hover,
 .site-footer .pure-menu a:focus {
 	background: none;
@@ -275,15 +279,39 @@ ul.post-categories li {
  * Comment styling is intentionally minimal.
  * I recommend using Disqus, LiveFyre, Intense Debate or another third party comment solution.
  */
+.comments-area {
+	margin-top: 3em;
+	border-top: 1px solid #eee;
+}
+.comments-area .comments-title {
+	font-size: 1.5em;
+	margin-top: 1em;
+}
 ol.comment-list,
 li.comment > ol.children {
 	list-style-type: none;
 }
 li.comment {
-	margin-bottom: 40px;
+	display: block;
+}
+.comment-body {
+	margin-bottom: 30px;
+}
+.comment-meta {
+	font-size: 0.8em;
 }
 .comment-meta a {
 	color: #999;
+}
+.comment-reply-title {
+	font-size: 1.25em;
+	margin-bottom: 0.5em;
+}
+.comment-respond {
+	margin-top: 40px;
+}
+.comment-form-comment label {
+	display: block;
 }
 
 /**
@@ -406,4 +434,4 @@ img.aligncenter {
 	.sidebar {
 		width: 33%;
 	}
-} 
+}

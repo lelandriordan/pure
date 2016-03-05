@@ -33,8 +33,8 @@ function pure_setup() {
 	/**
 	 * Add post thumbnails
 	 */
-	add_theme_support( 'post_thumbnails' );
-	
+	add_theme_support( 'post-thumbnails' );
+
 	/**
 	 * Enable post formats
 	 */
@@ -76,7 +76,7 @@ function pure_scripts() {
 	 * Stylesheets
 	 */
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/bower_components/font-awesome/css/font-awesome.min.css', array(), '4.1.0' );
-	wp_enqueue_style( 'pure-css', get_template_directory_uri() . '/assets/bower_components/pure/pure-min.css', array(), '0.5.0', 'all' );
+	wp_enqueue_style( 'pure-css', get_template_directory_uri() . '/assets/bower_components/pure/pure-min.css', array(), '0.6.0', 'all' );
 	wp_enqueue_style( 'pure-responsive-grid', get_template_directory_uri() . '/assets/bower_components/pure/grids-responsive-min.css', array( 'yahoo-pure' ), '0.5', 'all' );
 	wp_enqueue_style( 'pure-style', get_stylesheet_uri() );
 
