@@ -33,8 +33,8 @@ function pure_setup() {
 	/**
 	 * Add post thumbnails
 	 */
-	add_theme_support( 'post_thumbnails' );
-	
+	add_theme_support( 'post-thumbnails' );
+
 	/**
 	 * Enable post formats
 	 */
